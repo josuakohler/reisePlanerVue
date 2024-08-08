@@ -7,6 +7,6 @@ const app = createApp(App)
 
 
 app.component('route-comp',Route)
-app.component('route-search', RouteSearch)
+app.component('route-search-comp', RouteSearch)
 
 app.mount('#app')

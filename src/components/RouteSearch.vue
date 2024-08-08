@@ -1,48 +1,42 @@
 <template>
-  <div class="from-to">
-    <div class="from">
-      <label for="from">Von:</label>
-      <input
-        type="text"
-        id="from"
-        v-model="from"
-        placeholder="Sargans"
-        list="from-locations"
-      />
-      <datalist id="from-locations">
-        <option
-          v-for="location in fromLocations"
-          :key="location.toString"
-          :value="location.toString"
-        />
-      </datalist>
-    </div>
-    <div class="to">
-      <label for="to">Nach:</label>
-      <input
-        type="text"
-        id="to"
-        v-model="to"
-        placeholder="Chur"
-        list="to-locations"
-      />
-      <datalist id="to-locations">
-        <option
-          v-for="location in toLocations"
-          :key="location.toString"
-          :value="location.toString"
-        />
-      </datalist>
-    </div>
+  <div class="from">
+    <label for="from">Von:</label>
+    <input
+      type="text"
+      id="from"
+      placeholder="Sargans"
+      list="from-locations"
+      v-model="fromInput"
+      @input="searchLocations($event)"
+    />
+    <datalist id="from-locations">
+      <option v-for="location in fromLocations" :value="location.name" :key="location.name">
+        {{ location.name }}
+      </option>
+    </datalist>
   </div>
-  <button @click="searchRoutes">Suche nach Routen</button>
-  <p>Suche nach Routen Von: {{ from }} Nach: {{ to }}</p>
+  <div class="to">
+    <label for="to">Nach:</label>
+    <input
+      type="text"
+      id="to"
+      placeholder="Chur"
+      list="to-locations"
+      v-model="toInput"
+      @input="searchLocations($event)"
+    />
+    <datalist id="to-locations">
+      <option v-for="location in toLocations" :value="location.name" :key="location.name">
+        {{ location.name }}
+      </option>
+    </datalist>
+  </div>
+  <button @click="parentSearchRoute">Suche nach Routen</button>
+  <p>Suche nach Routen Von: {{ from }} Nach:</p>
 </template>
 
 <script lang="ts">
-
-import { ref, } from "vue";
-import { method } from 'lodash';
+import { ref } from "vue";
 
 interface Location {
   name: string;
@@ -54,81 +48,72 @@ interface Location {
   };
 }
 
-const from = ref("");
-const to = ref("");
-const fromLocations = ref<Location[]>([]);
-const toLocations = ref<Location[]>([]);
-
-
 export default {
   name: "RouteSearch",
-  
+
   props: {
     from: {
       type: String,
-      required: true,
     },
     to: {
       type: String,
-      required: true,
     },
-    departure: {
-      type: String,
-      required: true,
-    },
-    arrival: {
-      type: String,
-      required: true,
-    },
-    fromLocations:{
-        type: Location,
-        required: false,
-        default: ref<Location[]>([])
-    },
-    toLocations:{
-        type: Location,
-        required: false,
-        default: ref<Location[]>([])
-    },
-    searchRoutes:{
-        type: method ,
-        required: true,
-    }
 
+    searchRoutes: {
+      type: Function,
+      required: true,
+    },
   },
+
+  emits: {
+    "search-routes": function () {},
+  },
+
   data() {
-
+    return {
+      fromInput: "",
+      toInput: "",
+      fromLocations: ref<Location[]>([]),
+      toLocations: ref<Location[]>([]),
+    };
   },
-  
+
   methods: {
-    async searchLocations(query: string, isFrom: boolean) {
-        console.log(this.departure);
-      if (query.length < 2) return;
-      try {
-        const response = await fetch(
-          `http://transport.opendata.ch/v1/locations?query=${query}`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+    async searchLocations(event: any) {
+      const target = event.target;
+      if (target && target.value.length >= 2) {
+        try {
+          const response = await fetch(
+            `http://transport.opendata.ch/v1/locations?query=${target.value}`
+          );
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          const locations = data.stations.map((station: any) => ({
+            name: station.name,
+            score: station.score,
+            coordinate: {
+              type: station.coordinate.type,
+              x: station.coordinate.x,
+              y: station.coordinate.y,
+            },
+          }));
+
+          if (target.id === "from") {
+            this.fromLocations = locations;
+          } else {
+            this.toLocations = locations;
+          }
+        } catch (error) {
+          console.error("There was a problem fetching locations:", error);
         }
-        const data = await response.json();
-        if (isFrom) {
-          fromLocations.value = data.stations;
-          return fromLocations;
-        } else {
-          toLocations.value = data.stations;
-          return toLocations; 
-        }
-      } catch (error) {
-        console.error("There was a problem fetching locations:", error);
       }
-
     },
-    
+    parentSearchRoute() {
+      this.searchRoutes(this.fromInput, this.toInput);
+      this.$emit("search-routes");
+    },
   },
-  
 };
-
-
-
 </script>

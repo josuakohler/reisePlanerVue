@@ -1,17 +1,23 @@
 <template>
-  <route-comp
-    stationName="Chur"
-    platForm="3"
-    departure="2012-03-31T08:58:00+02:00"
-    arrival="2012-03-31T09:46:00+02:00"
-  ></route-comp>
+  <div class="container">
+    <div class="routes">
+      <CreateList initialRouteName=""></CreateList>
+    </div>
+    <div class="search">
+      <route-search-comp
+        :searchRoutes="searchRoutes"
+      >
+      </route-search-comp>
+    </div>
 
-  <route-search @search-route="searchRoutes" :searchRoutes="searchRoutes">
-  </route-search>
+    <div class="route-list">
+      <route-comp></route-comp>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 interface Station {
   station: {
@@ -27,28 +33,24 @@ interface Connection {
   to: Station;
 }
 
-const from = ref("");
-const to = ref("");
 const routeList = ref<Connection[]>([]);
-const searchRoutes = async () => {
+const searchRoutes = async (from: string, to: string) => {
+  console.log("das ist in from:" + from);
   try {
     const response = await fetch(
-      `http://transport.opendata.ch/v1/connections?from=${from.value}&to=${to.value}`
+      `http://transport.opendata.ch/v1/connections?from=${from}&to=${to}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
     routeList.value = data.connections;
-    console.log(data);
+    console.log(routeList.value);
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
   }
 };
 
-const firstConnection = computed<Connection | null>(
-  () => routeList.value[0] || null
-);
 </script>
 
 <style scoped>
@@ -57,7 +59,7 @@ body {
   background-color: #121212;
   color: #ffffff;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
 .container {
@@ -71,6 +73,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 10px;
 }
 
