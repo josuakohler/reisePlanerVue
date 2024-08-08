@@ -1,9 +1,4 @@
-<script setup lang="ts">
-</script>
-
 <template>
-
-
   <route-comp
     stationName="Chur"
     platForm="3"
@@ -11,8 +6,51 @@
     arrival="2012-03-31T09:46:00+02:00"
   ></route-comp>
 
-
+  <route-search @search-route="searchRoutes" :searchRoutes="searchRoutes">
+  </route-search>
 </template>
+
+<script setup lang="ts">
+import { computed, ref } from "vue";
+
+interface Station {
+  station: {
+    name: string;
+  };
+  platform: string;
+  departure: string;
+  arrival: string;
+}
+
+interface Connection {
+  from: Station;
+  to: Station;
+}
+
+const from = ref("");
+const to = ref("");
+const routeList = ref<Connection[]>([]);
+const searchRoutes = async () => {
+  try {
+    const response = await fetch(
+      `http://transport.opendata.ch/v1/connections?from=${from.value}&to=${to.value}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    routeList.value = data.connections;
+    console.log(data);
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+  }
+};
+
+const firstConnection = computed<Connection | null>(
+  () => routeList.value[0] || null
+);
+</script>
+
 <style scoped>
 body {
   font-family: Arial, sans-serif;
