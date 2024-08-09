@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="routes">
+      <create-list-comp></create-list-comp>
     </div>
     <div class="search">
       <route-search-comp :searchRoutes="fetchRoutes.searchRoutes"> </route-search-comp>
