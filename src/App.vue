@@ -1,5 +1,5 @@
 <template>
-  <add-to-list-comp></add-to-list-comp>
+
 
   <div class="container">
     <div class="routes">
@@ -28,7 +28,10 @@
 <script setup lang="ts">
 import { useFetchRoutes } from "./stores/fetchRoutes";
 
+
 const fetchRoutes = useFetchRoutes();
+
+
 </script>
 
 <style scoped></style>

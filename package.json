@@ -9,14 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@primevue/themes": "^4.0.4",
+    "chalk": "^4.1.2",
     "composition-api": "^0.0.0",
     "material-icons": "^1.13.12",
     "pinia": "^2.2.1",
+    "primevue": "^4.0.4",
+    "sass": "^1.77.8",
+    "scss": "^0.2.4",
+    "service": "^0.1.4",
     "vue": "^3.4.29",
-    "vuesax": "^3.12.2"
+    "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
+    "@types/node": "^22.1.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",

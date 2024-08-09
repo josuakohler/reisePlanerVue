@@ -1,36 +1,58 @@
-<template lang="html">
-  <div class="centerx">
-    <vs-button @click="popupActivo = true" color="primary" type="border"
-      >Open Default popup</vs-button
-    >
-    <vs-popup
-      class="holamundo"
-      title="Lorem ipsum dolor sit amet"
-      :active.sync="popupActivo"
-    >
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </vs-popup>
+<template>
+  <div class="popup">
+    <div class="popup-inner">
+      <button class="popup-close" @click="TogglePopup()">Close Popup</button>
+      <slot />
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-
-export default defineComponent({
-  setup() {
-    const popupActivo = ref(false);
-
-    return {
-      popupActivo,
-    };
-  },
-});
+<script>
+export default {
+  props: ["TogglePopup"],
+};
 </script>
+
+<style lang="scss" scoped>
+.popup {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-inner {
+  background-color: #1db954; /* Spotify Green */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  max-width: 400px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.popup-close {
+  background-color: #191414; /* Spotify Dark Background */
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.popup-close:hover {
+  background-color: #1db954; /* Hover effect with Spotify Green */
+  color: #191414; /* Text color change to Spotify Dark Background */
+}
+
+</style>

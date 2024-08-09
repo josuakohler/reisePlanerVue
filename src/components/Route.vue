@@ -21,11 +21,20 @@
       <span>{{ formatTime(arrival) }}</span>
     </div>
     <!-- Add to routelist -->
-    <button>...</button>
+    <button @click="() => TogglePopup('buttonTrigger')">...</button>
+
+    <add-to-list-comp
+      v-if="popupTriggers.buttonTrigger"
+      :TogglePopup="() => TogglePopup('buttonTrigger')"
+    >
+      <h2>My Button Popup</h2>
+    </add-to-list-comp>
   </div>
 </template>
 
 <script lang="ts">
+import { ref } from "vue";
+
 export default {
   name: "RouteComp",
   props: {
@@ -48,9 +57,37 @@ export default {
   },
 
   data() {
-    return {};
-  },
 
+    
+    return {
+
+
+
+    };
+    
+  },
+  setup() {
+    const popupTriggers = ref<{
+      buttonTrigger: boolean;
+      timedTrigger: boolean;
+    }>({
+      buttonTrigger: false,
+      timedTrigger: false
+    });
+
+    const TogglePopup = (trigger: 'buttonTrigger' | 'timedTrigger') => {
+      popupTriggers.value[trigger] = !popupTriggers.value[trigger];
+    };
+
+    setTimeout(() => {
+      popupTriggers.value.timedTrigger = true;
+    }, 3000);
+
+    return {
+      popupTriggers,
+      TogglePopup
+    };
+  },
   methods: {
     calculateDuration(departure: string, arrival: string): string {
       const dep = new Date(departure);
@@ -70,5 +107,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
