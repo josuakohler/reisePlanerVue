@@ -37,16 +37,8 @@
 
 <script lang="ts">
 import { ref } from "vue";
+import type { Location } from "../types"
 
-interface Location {
-  name: string;
-  score: number;
-  coordinate: {
-    type: string;
-    x: number;
-    y: number;
-  };
-}
 
 export default {
   name: "RouteSearch",

@@ -18,20 +18,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import type { Connection} from "./types";
 
-interface Station {
-  station: {
-    name: string;
-  };
-  platform: string;
-  departure: string;
-  arrival: string;
-}
 
-interface Connection {
-  from: Station;
-  to: Station;
-}
 
 const routeList = ref<Connection[]>([]);
 const searchRoutes = async (from: string, to: string) => {
