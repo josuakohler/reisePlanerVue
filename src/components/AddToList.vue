@@ -7,10 +7,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["TogglePopup"],
-};
+<script setup lang="ts">
+// import { ref } from "vue";
+
+defineProps<{ 
+    TogglePopup: Function
+
+  
+   }>()
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -28,7 +35,7 @@ export default {
 }
 
 .popup-inner {
-  background-color: #1db954; /* Spotify Green */
+  background-color: rgba(0, 0, 0, 0.705); /* Spotify Green */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: #fff;

@@ -27,86 +27,67 @@
       v-if="popupTriggers.buttonTrigger"
       :TogglePopup="() => TogglePopup('buttonTrigger')"
     >
-      <h2>My Button Popup</h2>
+      <select v-model="selectedRoute">
+        <option disabled value="">Select a route</option>
+        <option
+          v-for="route in createList.routePlayList"
+          :key="route.id"
+          :value="route.name"
+        >
+          {{ route.name }}
+        </option>
+      </select>
     </add-to-list-comp>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from "vue";
+import { useRoutePlayListStore } from "../stores/CreateList";
+import { computed } from "vue";
+const selectedRoute = ref<string>("");
 
-export default {
-  name: "RouteComp",
-  props: {
-    stationName: {
-      type: String,
-      required: true,
-    },
-    platForm: {
-      type: String,
-      required: true,
-    },
-    departure: {
-      type: String,
-      required: true,
-    },
-    arrival: {
-      type: String,
-      required: true,
-    },
-  },
+const props = defineProps<{
+  stationName: string;
+  platForm: string;
+  departure: string;
+  arrival: string;
+}>();
 
-  data() {
+const createList = useRoutePlayListStore();
 
-    
-    return {
+const popupTriggers = ref<{
+  buttonTrigger: boolean;
+  timedTrigger: boolean;
+}>({
+  buttonTrigger: false,
+  timedTrigger: false,
+});
 
+const TogglePopup = (trigger: "buttonTrigger" | "timedTrigger") => {
+  popupTriggers.value[trigger] = !popupTriggers.value[trigger];
+};
 
+setTimeout(() => {
+  popupTriggers.value.timedTrigger = true;
+}, 3000);
 
-    };
-    
-  },
-  setup() {
-    const popupTriggers = ref<{
-      buttonTrigger: boolean;
-      timedTrigger: boolean;
-    }>({
-      buttonTrigger: false,
-      timedTrigger: false
-    });
+const calculateDuration = (departure: string, arrival: string): string => {
+  const dep = new Date(departure);
+  const arr = new Date(arrival);
+  const diff = (arr.getTime() - dep.getTime()) / 60000; // difference in minutes
+  return `${diff} min`;
+};
 
-    const TogglePopup = (trigger: 'buttonTrigger' | 'timedTrigger') => {
-      popupTriggers.value[trigger] = !popupTriggers.value[trigger];
-    };
-
-    setTimeout(() => {
-      popupTriggers.value.timedTrigger = true;
-    }, 3000);
-
-    return {
-      popupTriggers,
-      TogglePopup
-    };
-  },
-  methods: {
-    calculateDuration(departure: string, arrival: string): string {
-      const dep = new Date(departure);
-      const arr = new Date(arrival);
-      const diff = (arr.getTime() - dep.getTime()) / 60000; // difference in minutes
-      return `${diff} min`;
-    },
-    formatTime(dateTime: string): string {
-      const date = new Date(dateTime);
-      return date.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-    },
-  },
+const formatTime = (dateTime: string): string => {
+  const date = new Date(dateTime);
+  return date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 };
 </script>
 
-<style>
-
-
+<style scoped>
+/* Add your styles here */
 </style>
