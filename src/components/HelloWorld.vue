@@ -3,18 +3,7 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-export default{
-data(){
 
-  
-  return{
-
-
-  }
-}
-
-
-}
 const count = ref(0)
 </script>
 

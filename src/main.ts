@@ -1,12 +1,16 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import Route from './components/Route.vue'
-import RouteSearch from './components/RouteSearch.vue'
-const app = createApp(App)
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+import Route from "./components/Route.vue";
+import RouteSearch from "./components/RouteSearch.vue";
+import { createPinia } from "pinia";
 
+const app = createApp(App);
+const pinia = createPinia();
 
-app.component('route-comp',Route)
-app.component('route-search-comp', RouteSearch)
+app.use(pinia);
 
-app.mount('#app')
+app.component("route-comp", Route);
+app.component("route-search-comp", RouteSearch);
+
+app.mount("#app");
