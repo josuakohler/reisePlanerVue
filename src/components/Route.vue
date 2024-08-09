@@ -40,6 +40,8 @@
     </add-to-list-comp>
   </div>
 </template>
+ <!-- Alls nächstes mit idxList versuchen auf die ID von der RouteList zuzugreifen um dann mit dieser ID die ausgewählte route in eine liste zu speichern am besten mit einer addToFavorites method -->
+
 
 <script setup lang="ts">
 import { ref } from "vue";
