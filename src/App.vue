@@ -1,15 +1,18 @@
 <template>
+  <add-to-list-comp></add-to-list-comp>
+
   <div class="container">
     <div class="routes">
       <create-list-comp></create-list-comp>
     </div>
     <div class="search">
-      <route-search-comp :searchRoutes="fetchRoutes.searchRoutes"> </route-search-comp>
+      <route-search-comp :searchRoutes="fetchRoutes.searchRoutes">
+      </route-search-comp>
     </div>
 
-    <div class="route-list"> 
+    <div class="route-list">
       <div v-if="fetchRoutes.firstConnection">
-        <route-comp 
+        <route-comp
           v-for="(connection, index) in fetchRoutes.routeList"
           :key="index"
           :stationName="fetchRoutes.firstConnection.to.station.name"
@@ -23,13 +26,9 @@
 </template>
 
 <script setup lang="ts">
-
 import { useFetchRoutes } from "./stores/fetchRoutes";
 
 const fetchRoutes = useFetchRoutes();
-
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

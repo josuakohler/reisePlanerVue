@@ -21,7 +21,7 @@
       <span>{{ formatTime(arrival) }}</span>
     </div>
     <!-- Add to routelist -->
-    <button>Add to Routelist</button>
+    <button>...</button>
   </div>
 </template>
 
