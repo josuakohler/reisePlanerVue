@@ -21,33 +21,35 @@
       <span>{{ formatTime(arrival) }}</span>
     </div>
     <!-- Add to routelist -->
-    <button @click="() => TogglePopup('buttonTrigger')">...</button>
 
-    <add-to-list-comp
-      v-if="popupTriggers.buttonTrigger"
-      :TogglePopup="() => TogglePopup('buttonTrigger')"
-    >
-      <select v-model="selectedRoute">
-        <option disabled value="">Select a route</option>
-        <option
-          v-for="route in createList.routePlayList"
-          :key="route.id"
-          :value="route.name"
-        >
-          {{ route.name }}
-        </option>
-      </select>
-    </add-to-list-comp>
+    <button @click="showDialog">...</button>
+
+    <dialog ref="favDialog">
+      <form @submit.prevent="confirmDialog">
+        <select v-model="selectedRoute">
+          <option value="default">Select a route</option>
+          <option
+            v-for="route in createList.routePlayList"
+            :key="route.id"
+            :value="route.name"
+          >
+            {{ route.name }}
+          </option>
+        </select>
+        <div>
+          <button @click="closeDialog" formmethod="dialog">Cancel</button>
+          <button type="submit">Confirm</button>
+        </div>
+      </form>
+    </dialog>
   </div>
 </template>
- <!-- Alls nächstes mit idxList versuchen auf die ID von der RouteList zuzugreifen um dann mit dieser ID die ausgewählte route in eine liste zu speichern am besten mit einer addToFavorites method -->
-
+<!-- Alls nächstes mit idxList versuchen auf die ID von der RouteList zuzugreifen um dann mit dieser ID die ausgewählte route in eine liste zu speichern am besten mit einer addToFavorites method -->
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoutePlayListStore } from "../stores/CreateList";
 import { computed } from "vue";
-const selectedRoute = ref<string>("");
 
 const props = defineProps<{
   stationName: string;
@@ -57,7 +59,54 @@ const props = defineProps<{
 }>();
 
 const createList = useRoutePlayListStore();
+const selectedRoute = ref<string>("default");
+const favDialog = ref<HTMLDialogElement | null>(null);
+const outputMessage = ref<string>("");
 
+const showDialog = () => {
+  if (favDialog.value) {
+    favDialog.value.showModal();
+  }
+};
+
+const addToList = () => {};
+
+const closeDialog = () => {
+  if (favDialog.value) {
+    favDialog.value.close();
+  }
+};
+
+const confirmDialog = () => {
+  if (favDialog.value && selectedRoute.value !== "default") {
+    // Create a route object with the current route details
+    const route = {
+      stationName: props.stationName,
+      platForm: props.platForm,
+      departure: props.departure,
+      arrival: props.arrival,
+    };
+
+    // Add the route to the selected list
+    createList.addRouteToList(selectedRoute.value, route);
+
+    // Close the dialog
+    favDialog.value.close(selectedRoute.value);
+
+    // Optional: Reset the selected route
+    selectedRoute.value = "default";
+  }
+};
+onMounted(() => {
+  if (favDialog.value) {
+    favDialog.value.addEventListener("close", () => {
+      outputMessage.value =
+        favDialog.value?.returnValue === "default"
+          ? "No return value."
+          : `ReturnValue: ${favDialog.value?.returnValue}.`;
+    });
+  }
+});
 const popupTriggers = ref<{
   buttonTrigger: boolean;
   timedTrigger: boolean;

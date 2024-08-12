@@ -1,10 +1,16 @@
 <template>
-  <div class="popup">
-    <div class="popup-inner">
-      <button class="popup-close" @click="TogglePopup()">Close Popup</button>
-      <slot />
+<!-- A modal dialog containing a form -->
+<dialog id="favDialog">
+  <form>
+    <slot />
+    <div>
+      <button  class="popup-close" @click="TogglePopup()">Cancel</button>
+      <button id="confirmBtn" value="default">Confirm</button>
     </div>
-  </div>
+  </form>
+</dialog>
+<output></output>
+
 </template>
 
 <script setup lang="ts">

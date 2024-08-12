@@ -1,11 +1,10 @@
-// store/routePlayList.ts
-import { defineStore } from 'pinia';
-import type { RoutePlayListItem }from "../types";
+import { defineStore } from "pinia";
+import type { RoutePlayListItem, Route } from "../types";
 
 export const useRoutePlayListStore = defineStore({
-    id: "routePlayListStore",
+  id: "routePlayListStore",
   state: () => ({
-    routePlayListName: '',
+    routePlayListName: "",
     routePlayList: [] as RoutePlayListItem[],
   }),
 
@@ -49,15 +48,24 @@ export const useRoutePlayListStore = defineStore({
 
     loadList() {
       const savedList = localStorage.getItem("routePlayList");
-      
+
       if (savedList) {
         this.routePlayList = JSON.parse(savedList);
       }
     },
 
     initialize(initialRouteName?: string) {
-      this.routePlayListName = initialRouteName || '';
+      this.routePlayListName = initialRouteName || "";
       this.loadList();
-    }
+    },
+
+    addRouteToList(listName: string, route: Route) {
+      const list = this.routePlayList.find((list) => list.name === listName);
+      if (list) {
+        list.routen.push(route);
+        this.saveList();
+        console.log(list)
+      }
+    },
   },
 });
