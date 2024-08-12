@@ -49,7 +49,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoutePlayListStore } from "../stores/CreateList";
-import { computed } from "vue";
 
 const props = defineProps<{
   stationName: string;
@@ -68,8 +67,6 @@ const showDialog = () => {
     favDialog.value.showModal();
   }
 };
-
-const addToList = () => {};
 
 const closeDialog = () => {
   if (favDialog.value) {
@@ -114,10 +111,6 @@ const popupTriggers = ref<{
   buttonTrigger: false,
   timedTrigger: false,
 });
-
-const TogglePopup = (trigger: "buttonTrigger" | "timedTrigger") => {
-  popupTriggers.value[trigger] = !popupTriggers.value[trigger];
-};
 
 setTimeout(() => {
   popupTriggers.value.timedTrigger = true;

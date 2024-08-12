@@ -34,7 +34,7 @@ export const useRoutePlayListStore = defineStore({
         this.saveList();
       }
 
-      console.log(this.routePlayList[this.routePlayList.length - 1]);
+      // console.log(this.routePlayList[this.routePlayList.length - 1]);
     },
 
     deleteRouteList(index: number) {
@@ -48,10 +48,13 @@ export const useRoutePlayListStore = defineStore({
 
     loadList() {
       const savedList = localStorage.getItem("routePlayList");
-
       if (savedList) {
         this.routePlayList = JSON.parse(savedList);
       }
+    },
+
+    init() {
+      this.loadList();
     },
 
     initialize(initialRouteName?: string) {
@@ -64,7 +67,7 @@ export const useRoutePlayListStore = defineStore({
       if (list) {
         list.routen.push(route);
         this.saveList();
-        console.log(list)
+        console.log(list);
       }
     },
   },

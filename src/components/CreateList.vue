@@ -12,7 +12,7 @@
       :key="route.id"
     >
       <p>{{ route.name }}</p>
-      <button @click="createList.deleteRouteList(idxList)">delete</button>
+      <button @click="createList.deleteRouteList(idxList)" class="close-button">delete</button>
       <button @click="showDialog(route)">View</button>
     </div>
   </div>
@@ -66,35 +66,5 @@ const closeDialog = () => {
 </script>
 
 <style scoped>
-.large-dialog {
-  width: 90%;
-  height: 90%;
-  max-width: none;
-  max-height: none;
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.dialog-content {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  background-color: #d32f2f;
-}
 </style>

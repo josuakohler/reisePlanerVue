@@ -1,10 +1,9 @@
 <template>
   <div class="from">
-    <label for="from">Von:</label>
     <input
       type="text"
       id="from"
-      placeholder="Sargans"
+      placeholder="Von"
       list="from-locations"
       v-model="fromInput"
       @input="searchLocations($event)"
@@ -16,11 +15,10 @@
     </datalist>
   </div>
   <div class="to">
-    <label for="to">Nach:</label>
     <input
       type="text"
       id="to"
-      placeholder="Chur"
+      placeholder="Nach"
       list="to-locations"
       v-model="toInput"
       @input="searchLocations($event)"
@@ -31,8 +29,7 @@
       </option>
     </datalist>
   </div>
-  <button @click="parentSearchRoute">Suche nach Routen</button>
-  <p>Suche nach Routen Von: {{ from }} Nach:</p>
+  <button @click="parentSearchRoute">search</button>
 </template>
 
 <script lang="ts">
@@ -110,214 +107,21 @@ export default {
 };
 </script>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #FFFFFF;
-  margin: 0;
-  padding: 20px;
-}
 
-.container {
+<style scoped>
+.route-search {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
-.routes, .route-list {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.route-item {
-  background-color: #1E1E1E;
-  padding: 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-
-.route-item:hover {
-  background-color: #2C2C2C;
-}
-
-.search {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  background-color: #1E1E1E;
-  padding: 20px;
-  border-radius: 10px;
+  gap: 1rem;
 }
 
-.from-to {
+.search-input {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.from, .to {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-#from, #to {
-  padding: 10px;
+input {
   width: 200px;
-  background-color: #2C2C2C;
-  border: none;
-  border-radius: 5px;
-  color: white;
 }
-
-button {
-  padding: 10px 20px;
-  background-color: #00C853;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-  background-color: #00E676;
-  transform: scale(1.05);
-}
-
-.route-list-item {
-  background-color: #1E1E1E;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.route-list-item:hover {
-  background-color: #2C2C2C;
-  transform: scale(1.02);
-}
-
-.route-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.route-icon {
-  font-size: 24px;
-  color: #00C853;
-}
-
-.route-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.route-line {
-  font-weight: bold;
-  font-size: 18px;
-  color: #00C853;
-}
-
-.route-time, .route-platform, .route-duration {
-  font-size: 14px;
-  color: #B0B0B0;
-}
-
-.route-progress {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.progress-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #00C853;
-  border-radius: 50%;
-}
-
-.progress-line {
-  flex: 1;
-  height: 2px;
-  background-color: #00C853;
-  margin: 0 5px;
-}
-
-.route-capacity {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: #B0B0B0;
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-h1 {
-  color:#00C853;
-}
-
-#checklistDiv {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color:#2C2C2C;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  height: 25em;
-  width: 25em;
-  border-radius: 5px;
-}
-
-#checklistDiv.show {
-  display: block;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.checklist-item {
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  background-color: #1E1E1E;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.checklist-item:hover {
-  background-color: #2C2C2C;
-  transform: scale(1.02);
-}
-
-.checklist-item input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.checklist-item label {
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-#addToPlayList{
-  background-color: rgb(25, 0, 255);
-}
-
-
 </style>

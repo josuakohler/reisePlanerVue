@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #f8f9fa;
+  --accent-color: #4285f4;
+  --text-color: #333333;
+  --error-color: #dc3545;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(./assets/photo-1618005182384-a83a8bd57fbe.jpeg);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+input,
+select,
+:placeholder-shown {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.507);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(9.1px);
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
+button .close-button{
+    background-color: red;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+.close-button {
+  background-color: var(--error-color);
+}
+
+.close-button:hover {
+  background-color: #bd2130;
+}
+
+.route-list-item {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.route-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(138, 138, 138, 0.23);
+}
+
+.route-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.route-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.route-info {
+  flex: 1;
+}
+
+.route-line {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.route-progress {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--accent-color);
+  margin: 0 5px;
+}
+
+.route-capacity {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.large-dialog {
+  width: 80%;
+  height: 80%;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.dialog-content {
+  height: 100%;
+  overflow-y: auto;
+}

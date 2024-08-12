@@ -1,25 +1,24 @@
 <template>
-
-
   <div class="container">
-    <div class="routes">
-      <create-list-comp></create-list-comp>
-    </div>
-    <div class="search">
+    <div class="search-bar">
       <route-search-comp :searchRoutes="fetchRoutes.searchRoutes">
       </route-search-comp>
     </div>
-
-    <div class="route-list">
-      <div v-if="fetchRoutes.firstConnection">
-        <route-comp
-          v-for="(connection, index) in fetchRoutes.routeList"
-          :key="index"
-          :stationName="fetchRoutes.firstConnection.to.station.name"
-          :platForm="connection.from.platform"
-          :departure="connection.from.departure"
-          :arrival="connection.to.arrival"
-        ></route-comp>
+    <div class="main-content">
+      <div class="sidebar">
+        <create-list-comp></create-list-comp>
+      </div>
+      <div class="route-list">
+        <transition-group name="route-animation" tag="div">
+          <route-comp
+            v-for="(connection, index) in fetchRoutes.routeList"
+            :key="index"
+            :stationName="fetchRoutes.firstConnection?.to.station.name"
+            :platForm="connection.from.platform"
+            :departure="connection.from.departure"
+            :arrival="connection.to.arrival"
+          ></route-comp>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -27,11 +26,61 @@
 
 <script setup lang="ts">
 import { useFetchRoutes } from "./stores/fetchRoutes";
+import { useRoutePlayListStore } from "./stores/CreateList";
 
-
+const createList = useRoutePlayListStore();
 const fetchRoutes = useFetchRoutes();
-
-
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 10px;
+  gap: 30px;
+  padding: 20px;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: 0 0 25%;
+  padding: 20px;
+
+}
+
+.route-list {
+  padding: 40px;
+  width: 100%;
+  
+}
+
+.route-animation-enter-active,
+.route-animation-leave-active {
+  transition: all 0.5s ease;
+}
+
+.route-animation-enter-from,
+.route-animation-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>

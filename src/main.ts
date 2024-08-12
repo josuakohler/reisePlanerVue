@@ -7,7 +7,8 @@ import Route from "./components/Route.vue";
 import RouteSearch from "./components/RouteSearch.vue";
 import CreateList from "./components/CreateList.vue";
 import AddToList from "./components/AddToList.vue";
-
+import { useRoutePlayListStore } from "./stores/CreateList";
+import "./global.css";
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -18,4 +19,6 @@ app.component("route-comp", Route);
 app.component("route-search-comp", RouteSearch);
 app.component("create-list-comp", CreateList);
 
+const routePlayListStore = useRoutePlayListStore();
+routePlayListStore.init();
 app.mount("#app");
