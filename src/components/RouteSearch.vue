@@ -119,9 +119,11 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: black;
 }
 
 input {
   width: 200px;
+  color: black;
 }
 </style>

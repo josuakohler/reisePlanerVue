@@ -26,9 +26,7 @@
 
 <script setup lang="ts">
 import { useFetchRoutes } from "./stores/fetchRoutes";
-import { useRoutePlayListStore } from "./stores/CreateList";
 
-const createList = useRoutePlayListStore();
 const fetchRoutes = useFetchRoutes();
 </script>
 
@@ -36,6 +34,7 @@ const fetchRoutes = useFetchRoutes();
 .container {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .search-bar {
@@ -47,12 +46,9 @@ const fetchRoutes = useFetchRoutes();
   margin: 20px;
   border-radius: 10px;
   gap: 30px;
+  color: white;
   padding: 20px;
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.23);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.7px);
-  -webkit-backdrop-filter: blur(8.7px);
+
 }
 
 .main-content {
@@ -63,13 +59,15 @@ const fetchRoutes = useFetchRoutes();
 
 .sidebar {
   flex: 0 0 25%;
-  padding: 20px;
+  padding: 60px;
+  gap: 60px;
 
+  background: transparent;
 }
 
 .route-list {
-  padding: 40px;
   width: 100%;
+  padding-right: 5em;
   
 }
 
