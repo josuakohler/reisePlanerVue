@@ -205,8 +205,14 @@ ul {
   flex: 0;
   height: 3em;
   width: 20em;
-  padding-right: 5em;
-  margin-left: -15em;
+  padding-right: 10em;
+  margin-left: -10em;
+
+
+}
+
+button .delete-route{
+  background-color: red;
 
 
 }

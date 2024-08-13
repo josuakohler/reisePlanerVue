@@ -34,7 +34,14 @@
             :platForm="item.platForm"
             :departure="item.departure"
             :arrival="item.arrival"
-          ></route-comp>
+          >
+            <button
+              class="delete-route"
+              @click="deleteRoute(selectedRoute.name, index)"
+            >
+              delete
+            </button>
+          </route-comp>
         </li>
       </ul>
     </div>
@@ -66,6 +73,12 @@ const closeDialog = () => {
   if (favDialog.value) {
     favDialog.value.close();
   }
+};
+
+const deleteRoute = (listName: string, index: number) => {
+  createList.deleteFromPlayList(listName, index);
+  // Optionally, you might want to refresh the selectedRoute data here
+  // if it's not automatically updated by the store
 };
 </script>
 

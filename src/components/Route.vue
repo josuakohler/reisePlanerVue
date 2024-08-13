@@ -21,7 +21,7 @@
       <span>{{ formatTime(arrival) }}</span>
     </div>
     <!-- Add to routelist -->
-
+    <slot />
     <button @click="showDialog">...</button>
 
     <dialog ref="favDialog" class="favDialog">

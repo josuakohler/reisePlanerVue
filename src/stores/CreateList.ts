@@ -5,6 +5,7 @@ export const useRoutePlayListStore = defineStore({
   id: "routePlayListStore",
   state: () => ({
     routePlayListName: "",
+    routeId: new Date(),
     routePlayList: [] as RoutePlayListItem[],
   }),
 
@@ -68,6 +69,16 @@ export const useRoutePlayListStore = defineStore({
         list.routen.push(route);
         this.saveList();
         console.log(list);
+      }
+    },
+    deleteFromPlayList(listName: string, routeIndex: number) {
+      const list = this.routePlayList.find((list) => list.name === listName);
+      if (list) {
+        list.routen.splice(routeIndex, 1);
+        this.saveList();
+        console.log(`Route deleted from ${listName}`);
+      } else {
+        console.log(`Playlist ${listName} not found`);
       }
     },
   },
