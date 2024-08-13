@@ -25,6 +25,8 @@ export const useRoutePlayListStore = defineStore({
 
       if (nameExists) {
         alert("Diese routelist existiert bereits");
+      } else if (this.routePlayListName === "") {
+        alert("Du musst einen namen eingeben");
       } else {
         this.routePlayList.push({
           name: this.routePlayListName,
