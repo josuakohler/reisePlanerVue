@@ -1,4 +1,5 @@
 <template>
+  <div class="background"></div>
   <div class="route-list-item">
     <div class="route-header">
       <div class="route-icon">🚆</div>

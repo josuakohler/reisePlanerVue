@@ -21,12 +21,13 @@ input#from,
 :placeholder-shown {
   border: none;
   padding: 1rem;
-  -webkit-border-radius: 42px;
   border-radius: 42px;
   color: white;
-  background: #212121;
-  -webkit-box-shadow: 23px 23px 53px #141414, -23px -23px 53px #2e2e2e;
-  box-shadow: 23px 23px 53px #141414, -23px -23px 53px #2e2e2e;
+-webkit-border-radius: 42px;
+border-radius: 42px;
+background: #212121;
+-webkit-box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #353535;
+box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #353535;
 }
 input:focus {
   color: white;
@@ -52,11 +53,11 @@ button {
   outline: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-  -webkit-border-radius: 92px;
-  border-radius: 92px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
   background: #212121;
-  -webkit-box-shadow: 30px 30px 57px #0d0d0d, -30px -30px 57px #353535;
-  box-shadow: 30px 30px 57px #0d0d0d, -30px -30px 57px #353535;
+  -webkit-box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #353535;
+  box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #353535;
 }
 button:hover {
   box-shadow: -2px -2px 6px rgba(19, 19, 19, 0.6),

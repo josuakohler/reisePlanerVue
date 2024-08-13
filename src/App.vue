@@ -20,6 +20,8 @@
             :departure="connection.from.departure"
             :arrival="connection.to.arrival"
           ></route-comp>
+          <!-- <button class="load-button">load more</button> -->
+
         </transition-group>
       </div>
     </div>

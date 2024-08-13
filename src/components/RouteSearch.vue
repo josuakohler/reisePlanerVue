@@ -22,6 +22,7 @@
       list="to-locations"
       v-model="toInput"
       @input="searchLocations($event)"
+      @keyup.enter="parentSearchRoute"
     />
     <datalist id="to-locations">
       <option v-for="location in toLocations" :value="location.name" :key="location.name">
@@ -29,7 +30,7 @@
       </option>
     </datalist>
   </div>
-  <button @click="parentSearchRoute">search</button>
+  <button @click="parentSearchRoute" @keyup.enter="parentSearchRoute">search</button>
 </template>
 
 <script lang="ts">
