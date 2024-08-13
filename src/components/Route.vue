@@ -24,9 +24,9 @@
 
     <button @click="showDialog">...</button>
 
-    <dialog ref="favDialog">
+    <dialog ref="favDialog" class="favDialog">
       <form @submit.prevent="confirmDialog">
-        <select v-model="selectedRoute">
+        <select class="route-select" v-model="selectedRoute">
           <option value="default">Select a route</option>
           <option
             v-for="route in createList.routePlayList"

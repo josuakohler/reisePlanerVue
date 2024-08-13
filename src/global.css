@@ -16,6 +16,8 @@ body {
 
 input,
 select,
+input#to,
+input#from,
 :placeholder-shown {
   border: none;
   padding: 1rem;
@@ -26,8 +28,8 @@ select,
   -webkit-box-shadow: 23px 23px 53px #141414, -23px -23px 53px #2e2e2e;
   box-shadow: 23px 23px 53px #141414, -23px -23px 53px #2e2e2e;
 }
-input:focus{
-    color: white;
+input:focus {
+  color: white;
 }
 
 ::placeholder {
@@ -79,11 +81,12 @@ button:active {
   -webkit-backdrop-filter: blur(8.7px);
   margin-top: 10px;
   border-radius: 10px;
+  color: white;
 }
 
 .route-list-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(138, 138, 138, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .route-header {
@@ -134,14 +137,76 @@ button:active {
 }
 
 .large-dialog {
-  width: 80%;
-  height: 80%;
-  background-color: var(--primary-color);
-  border-radius: 8px;
-  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2rem;
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.055);
+  border-radius: 16px;
+  backdrop-filter: blur(0.8rem);
+  -webkit-backdrop-filter: blur(10.6px);
 }
 
 .dialog-content {
   height: 100%;
   overflow-y: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding-right: 4em;
+
+}
+
+.header-dialog {
+  display: flex;
+  flex: row;
+}
+
+.header-dialog .close-button-dialog {
+  flex: 0;
+  height: 100%;
+  color: red;
+  font-weight: bold;
+}
+
+.header-dialog .title-dialog {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.favDialog {
+  border-radius: 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.397);
+  border-radius: 16px;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(10.6px);
+}
+
+.favDialog button {
+  background-color: var(--accent-color);
+  color: black;
+}
+
+
+.route-select {
+  margin-bottom: 2em;
+  background-color: rgb(126, 126, 126);
+  color: white;
+  padding: 5px;
+  border-width: 5px;
+}
+
+.logo-img{
+  flex: 0;
+  height: 3em;
+  width: 20em;
+  padding-right: 5em;
+  margin-left: -15em;
+
+
 }

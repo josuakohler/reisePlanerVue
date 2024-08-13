@@ -12,33 +12,37 @@
       :key="route.id"
     >
       <p>{{ route.name }}</p>
-      <button @click="createList.deleteRouteList(idxList)" class="close-button">delete</button>
+      <button @click="createList.deleteRouteList(idxList)" class="close-button">
+        delete
+      </button>
       <button @click="showDialog(route)">View</button>
     </div>
   </div>
 
   <dialog ref="favDialog" class="large-dialog">
     <div v-if="selectedRoute" class="dialog-content">
-      <h2>{{ selectedRoute.name }}</h2>
+      <div class="header-dialog">
+        <h2 class="title-dialog">{{ selectedRoute.name }}</h2>
+        <button @click="closeDialog" class="close-button-dialog">Close</button>
+      </div>
+
       <!-- Add more details about the route here -->
       <ul>
         <li v-for="(item, index) in selectedRoute.routen" :key="index">
           <route-comp
-          :stationName="item.stationName"
-          :platForm="item.platForm"
-          :departure="item.departure"
-          :arrival="item.arrival" 
-          
+            :stationName="item.stationName"
+            :platForm="item.platForm"
+            :departure="item.departure"
+            :arrival="item.arrival"
           ></route-comp>
         </li>
       </ul>
     </div>
-    <button @click="closeDialog" class="close-button">Close</button>
   </dialog>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 import { useRoutePlayListStore } from "../stores/CreateList";
 import type { RoutePlayListItem } from "../types";
 
@@ -65,6 +69,4 @@ const closeDialog = () => {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

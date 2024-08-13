@@ -1,6 +1,8 @@
 <template>
   <div class="container">
     <div class="search-bar">
+      <img src="./assets/C91B68E9-0FD5-4224-9DA4-469BDD9A5A6D_4_5005_c.jpeg" class="logo-img" alt="" />
+
       <route-search-comp :searchRoutes="fetchRoutes.searchRoutes">
       </route-search-comp>
     </div>
@@ -48,7 +50,6 @@ const fetchRoutes = useFetchRoutes();
   gap: 30px;
   color: white;
   padding: 20px;
-
 }
 
 .main-content {
@@ -68,7 +69,6 @@ const fetchRoutes = useFetchRoutes();
 .route-list {
   width: 100%;
   padding-right: 5em;
-  
 }
 
 .route-animation-enter-active,
