@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <div class="search-bar">
-      <img src="./assets/C91B68E9-0FD5-4224-9DA4-469BDD9A5A6D_4_5005_c.jpeg" class="logo-img" alt="" />
+      <img
+        src="./assets/C91B68E9-0FD5-4224-9DA4-469BDD9A5A6D_4_5005_c.jpeg"
+        class="logo-img"
+        alt=""
+      />
 
       <route-search-comp :searchRoutes="fetchRoutes.searchRoutes">
       </route-search-comp>
@@ -21,7 +25,6 @@
             :arrival="connection.to.arrival"
           ></route-comp>
           <!-- <button class="load-button">load more</button> -->
-
         </transition-group>
       </div>
     </div>
