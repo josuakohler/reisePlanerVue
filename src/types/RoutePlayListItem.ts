@@ -6,6 +6,7 @@ export interface RoutePlayListItem {
 }
 
 export interface Route {
+  fromStationName: string;
   stationName: string;
   platForm: string;
   departure: string;

@@ -22,6 +22,7 @@
           <route-comp
             v-for="(connection, index) in fetchRoutes.routeList"
             :key="index"
+            :fromStationName="fetchRoutes.firstConnection?.from.station.name"
             :stationName="fetchRoutes.firstConnection?.to.station.name"
             :platForm="connection.from.platform"
             :departure="connection.from.departure"

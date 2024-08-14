@@ -40,6 +40,7 @@
       <ul>
         <li v-for="(item, index) in selectedRoute.routen" :key="index">
           <route-comp
+            :fromStationName="item.fromStationName"
             :stationName="item.stationName"
             :platForm="item.platForm"
             :departure="item.departure"
