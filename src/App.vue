@@ -23,8 +23,8 @@
             :platForm="connection.from.platform"
             :departure="connection.from.departure"
             :arrival="connection.to.arrival"
+            @dragStart="onRouteDragStart"
           ></route-comp>
-          <!-- <button class="load-button">load more</button> -->
         </transition-group>
       </div>
     </div>
@@ -35,6 +35,11 @@
 import { useFetchRoutes } from "./stores/fetchRoutes";
 
 const fetchRoutes = useFetchRoutes();
+
+const onRouteDragStart = () => {
+  // You can add any logic here if needed when a route starts being dragged
+  console.log("Route drag started");
+};
 </script>
 
 <style scoped>

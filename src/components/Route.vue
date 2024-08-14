@@ -1,6 +1,6 @@
 <template>
   <div class="background"></div>
-  <div class="route-list-item">
+  <div class="route-list-item" draggable="true" @dragstart="onDragStart">
     <div class="route-header">
       <div class="route-icon">🚆</div>
       <div class="route-info">
@@ -131,8 +131,26 @@ const formatTime = (dateTime: string): string => {
     minute: "2-digit",
   });
 };
+
+const emit = defineEmits(["dragStart"]);
+
+const onDragStart = (event: DragEvent) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.setData(
+      "text/plain",
+      JSON.stringify({
+        stationName: props.stationName,
+        platForm: props.platForm,
+        departure: props.departure,
+        arrival: props.arrival,
+      })
+    );
+  }
+  emit("dragStart");
+};
 </script>
 
 <style scoped>
-/* Add your styles here */
-</style>
+.route-list-item {
+  cursor: move;
+}</style>

@@ -5,7 +5,8 @@
       id="from"
       placeholder="Von"
       list="from-locations"
-      v-model="fromInput"
+      v-model="fromInput" autocomplete="off"
+
       @input="searchLocations($event)"
     />
     <datalist id="from-locations">
@@ -21,6 +22,7 @@
       placeholder="Nach"
       list="to-locations"
       v-model="toInput"
+      autocomplete="off"
       @input="searchLocations($event)"
       @keyup.enter="parentSearchRoute"
     />

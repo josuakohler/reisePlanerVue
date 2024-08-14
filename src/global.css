@@ -37,6 +37,13 @@ input:focus {
   color: white;
 }
 
+.list-name{
+
+  color: #b6f442;
+  text-transform: capitalize;
+
+}
+
 button {
   background: #efefef;
   border: none;
@@ -71,7 +78,6 @@ button:active {
 }
 
 .route-list-item {
-  background-color: var(--secondary-color);
   border-radius: 8px;
   padding: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -88,6 +94,13 @@ button:active {
 .route-list-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.route-list-item:active{
+  background: rgba(37, 37, 37, 0.23);
+
+
+
 }
 
 .route-header {

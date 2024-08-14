@@ -3,6 +3,7 @@
     type="text"
     @input="handleInput"
     :value="createList.routePlayListName"
+    @keyup.enter="createList.createList"
   />
   <button @click="createList.createList">Create List</button>
   <div class="route-list">
@@ -10,12 +11,21 @@
       class="route-list-item"
       v-for="(route, idxList) in createList.routePlayList"
       :key="route.id"
+      @dragover.prevent
+      @drop="onDrop($event, route.name)"
+      @click.prevent.self="showDialog(route)"
     >
-      <p>{{ route.name }}</p>
+      <p class="list-name">{{ route.name }}</p>
+
+      <p v-if="route.routen.length === 1">
+        {{ route.routen.length + " Route" }}
+      </p>
+      <p v-else-if="route.routen.length > 1">
+        {{ route.routen.length + " Routes" }}
+      </p>
       <button @click="createList.deleteRouteList(idxList)" class="close-button">
         delete
       </button>
-      <button @click="showDialog(route)">View</button>
     </div>
   </div>
 
@@ -75,6 +85,15 @@ const closeDialog = () => {
   }
 };
 
+const onDrop = (event: DragEvent, listName: string) => {
+  event.preventDefault();
+  const routeData = event.dataTransfer?.getData("text/plain");
+  if (routeData) {
+    const route = JSON.parse(routeData);
+    createList.addRouteToList(listName, route);
+  }
+};
+
 const deleteRoute = (listName: string, index: number) => {
   createList.deleteFromPlayList(listName, index);
   // Optionally, you might want to refresh the selectedRoute data here
@@ -82,4 +101,13 @@ const deleteRoute = (listName: string, index: number) => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+.route-list-item {
+  transition: background-color 0.3s;
+}
+.route-list-item.drag-over {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+</style>
+
