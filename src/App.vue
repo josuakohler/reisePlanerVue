@@ -15,7 +15,10 @@
         <create-list-comp></create-list-comp>
       </div>
       <div class="route-list">
-        <transition-group name="route-animation" tag="div">
+        <recently-searched-comp
+          v-if="!fetchRoutes.routeList.length"
+        ></recently-searched-comp>
+        <transition-group name="route-animation" tag="div" v-else>
           <route-comp
             v-for="(connection, index) in fetchRoutes.routeList"
             :key="index"
@@ -33,11 +36,9 @@
 
 <script setup lang="ts">
 import { useFetchRoutes } from "./stores/fetchRoutes";
-
 const fetchRoutes = useFetchRoutes();
 
 const onRouteDragStart = () => {
-  // You can add any logic here if needed when a route starts being dragged
   console.log("Route drag started");
 };
 </script>

@@ -23,6 +23,9 @@ export const useFetchRoutes = defineStore({
         const data = await response.json();
         this.routeList = data.connections;
         console.log(this.routeList);
+
+        // Save the recent search to localStorage
+        localStorage.setItem('recentSearch', JSON.stringify({ from, to }));
       } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
       }

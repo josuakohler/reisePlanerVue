@@ -38,6 +38,7 @@
 <script lang="ts">
 import { ref } from "vue";
 import type { Location } from "../types"
+import { useFetchRoutes } from "../stores/fetchRoutes";
 
 
 export default {
@@ -68,6 +69,11 @@ export default {
       fromLocations: ref<Location[]>([]),
       toLocations: ref<Location[]>([]),
     };
+    
+  },
+  setup() {
+    const fetchRoutes = useFetchRoutes();
+    return { fetchRoutes };
   },
 
   methods: {
@@ -105,6 +111,18 @@ export default {
     parentSearchRoute() {
       this.searchRoutes(this.fromInput, this.toInput);
       this.$emit("search-routes");
+    },
+    clearRouteList() {
+      this.fetchRoutes.routeList = [];
+    },
+  },
+
+  watch: {
+    fromInput() {
+      this.clearRouteList();
+    },
+    toInput() {
+      this.clearRouteList();
     },
   },
 };
