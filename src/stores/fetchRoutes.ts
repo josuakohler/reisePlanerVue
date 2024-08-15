@@ -1,14 +1,13 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import type { Connection } from "../types";
-import type { Checkpoints } from "../types"
+import type { Checkpoints } from "../types";
 
 export const useFetchRoutes = defineStore({
   id: "data",
   state: () => ({
     routeList: ref<Connection[]>([]),
     intermediateStops: ref<Checkpoints[]>([]),
-
   }),
   getters: {
     firstConnection: (state) => state.routeList[0] || null,
@@ -30,8 +29,9 @@ export const useFetchRoutes = defineStore({
         // Save the recent search to localStorage
         localStorage.setItem('recentSearch', JSON.stringify({ from, to }));
       } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("There was a problem with the fetch operat ion:", error);
       }
+     
     },
     async fetchIntermediateStops(from: string, to: string, departure: string) {
       try {
@@ -44,21 +44,22 @@ export const useFetchRoutes = defineStore({
         const data = await response.json();
         if (data.connections && data.connections.length > 0) {
           const connection = data.connections[0];
-          
-          this.intermediateStops = connection.sections.flatMap((section: any) => 
+
+          this.intermediateStops = connection.sections.flatMap((section: any) =>
             section.journey ? section.journey.passList : []
           );
-
-
         } else {
-          throw new Error('No connection found');
+          throw new Error("No connection found");
         }
       } catch (error) {
-        console.error("There was a problem fetching intermediate stops:", error);
+        console.error(
+          "There was a problem fetching intermediate stops:",
+          error
+        );
         throw error;
       }
 
-      console.log(this.intermediateStops)
+      console.log(this.intermediateStops);
     },
   },
 });

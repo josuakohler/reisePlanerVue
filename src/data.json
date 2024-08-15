@@ -1,0 +1,1964 @@
+{
+  "connections": [
+    {
+      "from": {
+        "station": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2024-08-15T14:57:00+0200",
+        "departureTimestamp": 1723726620,
+        "delay": 1,
+        "platform": "2",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2024-08-15T14:58:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        }
+      },
+      "to": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2024-08-15T15:53:00+0200",
+        "arrivalTimestamp": 1723729980,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "8",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      },
+      "duration": "00d00:55:00",
+      "transfers": 0,
+      "service": null,
+      "products": ["IC 3"],
+      "capacity1st": null,
+      "capacity2nd": null,
+      "sections": [
+        {
+          "journey": {
+            "name": "000928",
+            "category": "IC",
+            "subcategory": null,
+            "categoryCode": null,
+            "number": "3",
+            "operator": "SBB",
+            "to": "Zürich HB",
+            "passList": [
+              {
+                "station": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": "2024-08-15T14:57:00+0200",
+                "departureTimestamp": 1723726620,
+                "delay": 1,
+                "platform": "2",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T14:58:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": null,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T14:45:51+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:53:00+0200",
+                "arrivalTimestamp": 1723729980,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": 0,
+                "platform": "8",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": "2024-08-15T15:53:00+0200",
+                  "departure": null,
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                }
+              }
+            ],
+            "capacity1st": null,
+            "capacity2nd": null
+          },
+          "walk": null,
+          "departure": {
+            "station": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": "2024-08-15T14:57:00+0200",
+            "departureTimestamp": 1723726620,
+            "delay": 1,
+            "platform": "2",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2024-08-15T14:58:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            }
+          },
+          "arrival": {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T15:53:00+0200",
+            "arrivalTimestamp": 1723729980,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "8",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2024-08-15T15:53:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "from": {
+        "station": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2024-08-15T15:02:00+0200",
+        "departureTimestamp": 1723726920,
+        "delay": 0,
+        "platform": "4",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2024-08-15T15:02:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        }
+      },
+      "to": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2024-08-15T16:17:00+0200",
+        "arrivalTimestamp": 1723731420,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "5",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      },
+      "duration": "00d01:15:00",
+      "transfers": 1,
+      "service": null,
+      "products": ["S17", "S25"],
+      "capacity1st": null,
+      "capacity2nd": null,
+      "sections": [
+        {
+          "journey": {
+            "name": "011458",
+            "category": "S",
+            "subcategory": null,
+            "categoryCode": null,
+            "number": "17",
+            "operator": "SOB-sob",
+            "to": "Rapperswil SG",
+            "passList": [
+              {
+                "station": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": "2024-08-15T15:02:00+0200",
+                "departureTimestamp": 1723726920,
+                "delay": 0,
+                "platform": "4",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:02:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509412",
+                  "name": "Mels",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.053742,
+                    "y": 9.41776
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:04:00+0200",
+                "arrivalTimestamp": 1723727040,
+                "departure": "2024-08-15T15:04:00+0200",
+                "departureTimestamp": 1723727040,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:05:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509412",
+                  "name": "Mels",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.053742,
+                    "y": 9.41776
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509413",
+                  "name": "Flums",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.096611,
+                    "y": 9.34793
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:09:00+0200",
+                "arrivalTimestamp": 1723727340,
+                "departure": "2024-08-15T15:09:00+0200",
+                "departureTimestamp": 1723727340,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:10:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509413",
+                  "name": "Flums",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.096611,
+                    "y": 9.34793
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509414",
+                  "name": "Walenstadt",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.119869,
+                    "y": 9.312985
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:12:00+0200",
+                "arrivalTimestamp": 1723727520,
+                "departure": "2024-08-15T15:13:00+0200",
+                "departureTimestamp": 1723727580,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:13:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509414",
+                  "name": "Walenstadt",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.119869,
+                    "y": 9.312985
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509416",
+                  "name": "Unterterzen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.113854,
+                    "y": 9.255021
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:17:00+0200",
+                "arrivalTimestamp": 1723727820,
+                "departure": "2024-08-15T15:18:00+0200",
+                "departureTimestamp": 1723727880,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:18:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509416",
+                  "name": "Unterterzen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.113854,
+                    "y": 9.255021
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509417",
+                  "name": "Murg",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.113174,
+                    "y": 9.215038
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:20:00+0200",
+                "arrivalTimestamp": 1723728000,
+                "departure": "2024-08-15T15:20:00+0200",
+                "departureTimestamp": 1723728000,
+                "delay": 2,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:22:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509417",
+                  "name": "Murg",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.113174,
+                    "y": 9.215038
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509418",
+                  "name": "Mühlehorn",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.117838,
+                    "y": 9.173015
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:25:00+0200",
+                "arrivalTimestamp": 1723728300,
+                "departure": "2024-08-15T15:25:00+0200",
+                "departureTimestamp": 1723728300,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:26:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509418",
+                  "name": "Mühlehorn",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.117838,
+                    "y": 9.173015
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:31:00+0200",
+                "arrivalTimestamp": 1723728660,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": 0,
+                "platform": "6",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": "2024-08-15T15:31:00+0200",
+                  "departure": null,
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                }
+              }
+            ],
+            "capacity1st": null,
+            "capacity2nd": null
+          },
+          "walk": null,
+          "departure": {
+            "station": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": "2024-08-15T15:02:00+0200",
+            "departureTimestamp": 1723726920,
+            "delay": 0,
+            "platform": "4",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2024-08-15T15:02:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            }
+          },
+          "arrival": {
+            "station": {
+              "id": "8503225",
+              "name": "Ziegelbrücke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.136149,
+                "y": 9.06005
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T15:31:00+0200",
+            "arrivalTimestamp": 1723728660,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "6",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2024-08-15T15:31:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503225",
+              "name": "Ziegelbrücke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.136149,
+                "y": 9.06005
+              },
+              "distance": null
+            }
+          }
+        },
+        {
+          "journey": {
+            "name": "020560",
+            "category": "S",
+            "subcategory": null,
+            "categoryCode": null,
+            "number": "25",
+            "operator": "SBB",
+            "to": "Zürich HB",
+            "passList": [
+              {
+                "station": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:31:00+0200",
+                "arrivalTimestamp": 1723728660,
+                "departure": "2024-08-15T15:34:00+0200",
+                "departureTimestamp": 1723728840,
+                "delay": 0,
+                "platform": "5",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:34:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503221",
+                  "name": "Siebnen-Wangen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.182664,
+                    "y": 8.900711
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:43:00+0200",
+                "arrivalTimestamp": 1723729380,
+                "departure": "2024-08-15T15:43:00+0200",
+                "departureTimestamp": 1723729380,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:43:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503221",
+                  "name": "Siebnen-Wangen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.182664,
+                    "y": 8.900711
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503220",
+                  "name": "Lachen SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.190065,
+                    "y": 8.852718
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:46:00+0200",
+                "arrivalTimestamp": 1723729560,
+                "departure": "2024-08-15T15:46:00+0200",
+                "departureTimestamp": 1723729560,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:47:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503220",
+                  "name": "Lachen SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.190065,
+                    "y": 8.852718
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503209",
+                  "name": "Pfäffikon SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.202994,
+                    "y": 8.778136
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:51:00+0200",
+                "arrivalTimestamp": 1723729860,
+                "departure": "2024-08-15T15:52:00+0200",
+                "departureTimestamp": 1723729920,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:52:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503209",
+                  "name": "Pfäffikon SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.202994,
+                    "y": 8.778136
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503206",
+                  "name": "Wädenswil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.229306,
+                    "y": 8.675218
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:59:00+0200",
+                "arrivalTimestamp": 1723730340,
+                "departure": "2024-08-15T16:00:00+0200",
+                "departureTimestamp": 1723730400,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:00:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503206",
+                  "name": "Wädenswil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.229306,
+                    "y": 8.675218
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:17:00+0200",
+                "arrivalTimestamp": 1723731420,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": 0,
+                "platform": "5",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": "2024-08-15T16:17:00+0200",
+                  "departure": null,
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                }
+              }
+            ],
+            "capacity1st": null,
+            "capacity2nd": null
+          },
+          "walk": null,
+          "departure": {
+            "station": {
+              "id": "8503225",
+              "name": "Ziegelbrücke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.136149,
+                "y": 9.06005
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T15:31:00+0200",
+            "arrivalTimestamp": 1723728660,
+            "departure": "2024-08-15T15:34:00+0200",
+            "departureTimestamp": 1723728840,
+            "delay": 0,
+            "platform": "5",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2024-08-15T15:34:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503225",
+              "name": "Ziegelbrücke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.136149,
+                "y": 9.06005
+              },
+              "distance": null
+            }
+          },
+          "arrival": {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T16:17:00+0200",
+            "arrivalTimestamp": 1723731420,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "5",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2024-08-15T16:17:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "from": {
+        "station": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2024-08-15T15:27:00+0200",
+        "departureTimestamp": 1723728420,
+        "delay": 0,
+        "platform": "2",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2024-08-15T15:27:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        }
+      },
+      "to": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2024-08-15T16:22:00+0200",
+        "arrivalTimestamp": 1723731720,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "13",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      },
+      "duration": "00d00:55:00",
+      "transfers": 0,
+      "service": null,
+      "products": ["IC 3"],
+      "capacity1st": null,
+      "capacity2nd": null,
+      "sections": [
+        {
+          "journey": {
+            "name": "000576",
+            "category": "IC",
+            "subcategory": null,
+            "categoryCode": null,
+            "number": "3",
+            "operator": "SBB",
+            "to": "Basel SBB",
+            "passList": [
+              {
+                "station": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": "2024-08-15T15:27:00+0200",
+                "departureTimestamp": 1723728420,
+                "delay": 0,
+                "platform": "2",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:27:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": null,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T14:44:51+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:22:00+0200",
+                "arrivalTimestamp": 1723731720,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": 0,
+                "platform": "13",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": "2024-08-15T16:22:00+0200",
+                  "departure": null,
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                }
+              }
+            ],
+            "capacity1st": null,
+            "capacity2nd": null
+          },
+          "walk": null,
+          "departure": {
+            "station": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": "2024-08-15T15:27:00+0200",
+            "departureTimestamp": 1723728420,
+            "delay": 0,
+            "platform": "2",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2024-08-15T15:27:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            }
+          },
+          "arrival": {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T16:22:00+0200",
+            "arrivalTimestamp": 1723731720,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "13",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2024-08-15T16:22:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "from": {
+        "station": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2024-08-15T15:35:00+0200",
+        "departureTimestamp": 1723728900,
+        "delay": 1,
+        "platform": "2",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2024-08-15T15:36:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509411",
+          "name": "Sargans",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.044825,
+            "y": 9.446259
+          },
+          "distance": null
+        }
+      },
+      "to": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2024-08-15T16:48:00+0200",
+        "arrivalTimestamp": 1723733280,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "13",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      },
+      "duration": "00d01:12:00",
+      "transfers": 0,
+      "service": null,
+      "products": ["IR 35"],
+      "capacity1st": null,
+      "capacity2nd": null,
+      "sections": [
+        {
+          "journey": {
+            "name": "002376",
+            "category": "IR",
+            "subcategory": null,
+            "categoryCode": null,
+            "number": "35",
+            "operator": "SOB-sob",
+            "to": "Bern",
+            "passList": [
+              {
+                "station": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": "2024-08-15T15:35:00+0200",
+                "departureTimestamp": 1723728900,
+                "delay": 1,
+                "platform": "2",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:36:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509411",
+                  "name": "Sargans",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.044825,
+                    "y": 9.446259
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8509414",
+                  "name": "Walenstadt",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.119869,
+                    "y": 9.312985
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:43:00+0200",
+                "arrivalTimestamp": 1723729380,
+                "departure": "2024-08-15T15:44:00+0200",
+                "departureTimestamp": 1723729440,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T15:45:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8509414",
+                  "name": "Walenstadt",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.119869,
+                    "y": 9.312985
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T15:58:00+0200",
+                "arrivalTimestamp": 1723730280,
+                "departure": "2024-08-15T16:00:00+0200",
+                "departureTimestamp": 1723730400,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:01:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503225",
+                  "name": "Ziegelbrücke",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.136149,
+                    "y": 9.06005
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503221",
+                  "name": "Siebnen-Wangen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.182664,
+                    "y": 8.900711
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:09:00+0200",
+                "arrivalTimestamp": 1723730940,
+                "departure": "2024-08-15T16:10:00+0200",
+                "departureTimestamp": 1723731000,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:10:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503221",
+                  "name": "Siebnen-Wangen",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.182664,
+                    "y": 8.900711
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503209",
+                  "name": "Pfäffikon SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.202994,
+                    "y": 8.778136
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:17:00+0200",
+                "arrivalTimestamp": 1723731420,
+                "departure": "2024-08-15T16:19:00+0200",
+                "departureTimestamp": 1723731540,
+                "delay": 1,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:20:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503209",
+                  "name": "Pfäffikon SZ",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.202994,
+                    "y": 8.778136
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503206",
+                  "name": "Wädenswil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.229306,
+                    "y": 8.675218
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:27:00+0200",
+                "arrivalTimestamp": 1723732020,
+                "departure": "2024-08-15T16:29:00+0200",
+                "departureTimestamp": 1723732140,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:29:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503206",
+                  "name": "Wädenswil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.229306,
+                    "y": 8.675218
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503202",
+                  "name": "Thalwil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.29598,
+                    "y": 8.564768
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:38:00+0200",
+                "arrivalTimestamp": 1723732680,
+                "departure": "2024-08-15T16:39:00+0200",
+                "departureTimestamp": 1723732740,
+                "delay": 0,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T16:39:00+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503202",
+                  "name": "Thalwil",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.29598,
+                    "y": 8.564768
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                },
+                "arrival": null,
+                "arrivalTimestamp": null,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": null,
+                "platform": null,
+                "prognosis": {
+                  "platform": null,
+                  "arrival": null,
+                  "departure": "2024-08-15T14:44:51+0200",
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "0000176",
+                  "name": "Zimmerberg-Basistunnel",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.351675,
+                    "y": 8.52196
+                  },
+                  "distance": null
+                }
+              },
+              {
+                "station": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                },
+                "arrival": "2024-08-15T16:48:00+0200",
+                "arrivalTimestamp": 1723733280,
+                "departure": null,
+                "departureTimestamp": null,
+                "delay": 0,
+                "platform": "13",
+                "prognosis": {
+                  "platform": null,
+                  "arrival": "2024-08-15T16:48:00+0200",
+                  "departure": null,
+                  "capacity1st": null,
+                  "capacity2nd": null
+                },
+                "realtimeAvailability": null,
+                "location": {
+                  "id": "8503000",
+                  "name": "Zürich HB",
+                  "score": null,
+                  "coordinate": {
+                    "type": "WGS84",
+                    "x": 47.377847,
+                    "y": 8.540502
+                  },
+                  "distance": null
+                }
+              }
+            ],
+            "capacity1st": null,
+            "capacity2nd": null
+          },
+          "walk": null,
+          "departure": {
+            "station": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": "2024-08-15T15:35:00+0200",
+            "departureTimestamp": 1723728900,
+            "delay": 1,
+            "platform": "2",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2024-08-15T15:36:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            }
+          },
+          "arrival": {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2024-08-15T16:48:00+0200",
+            "arrivalTimestamp": 1723733280,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "13",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2024-08-15T16:48:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "from": {
+    "id": "8509411",
+    "name": "Sargans",
+    "score": null,
+    "coordinate": {
+      "type": "WGS84",
+      "x": 47.044825,
+      "y": 9.446259
+    },
+    "distance": null
+  },
+  "to": {
+    "id": "8503000",
+    "name": "Zürich HB",
+    "score": null,
+    "coordinate": {
+      "type": "WGS84",
+      "x": 47.377847,
+      "y": 8.540502
+    },
+    "distance": null
+  },
+  "stations": {
+    "from": [
+      {
+        "id": "8509411",
+        "name": "Sargans",
+        "score": null,
+        "coordinate": {
+          "type": "WGS84",
+          "x": 47.044825,
+          "y": 9.446259
+        },
+        "distance": null
+      }
+    ],
+    "to": [
+      {
+        "id": "8503000",
+        "name": "Zürich HB",
+        "score": null,
+        "coordinate": {
+          "type": "WGS84",
+          "x": 47.377847,
+          "y": 8.540502
+        },
+        "distance": null
+      }
+    ]
+  },
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  }
+}
