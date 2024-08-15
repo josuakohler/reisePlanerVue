@@ -4,7 +4,9 @@
     <div class="route-header">
       <div class="route-icon">🚆</div>
       <div class="route-info">
-        <div class="route-line">{{ fromStationName }} &#10144;		 {{ stationName }}</div>
+        <div class="route-line">
+          {{ fromStationName }} &#10144; {{ stationName }}
+        </div>
         <div class="route-time"></div>
         <div class="route-platform">Gl. {{ platForm }}</div>
         <div class="route-duration">
@@ -22,8 +24,40 @@
       <span>{{ formatTime(arrival) }}</span>
     </div>
     <!-- Add to routelist -->
-    <slot />
-    <button @click="showDialog">...</button>
+    <button @click="showStopsDialog">...</button>
+
+    <dialog ref="stopsDialog" class="large-dialog">
+      <div class="view-stop">
+        <h2>Intermediate Stops</h2>
+        <div>
+          <ul class="stop-list">
+            <li
+              v-for="(stop, index) in fetchRoutes.intermediateStops"
+              :key="index"
+              class="stop-item"
+            >
+              <div class="stop-name">{{ stop.station.name }}</div>
+              <div class="stop-times">
+                <span class="arrival"
+                  >Arrival: {{ formatTime(stop.arrival) }}</span
+                >
+                <span class="departure"
+                  >Departure: {{ formatTime(stop.departure) }}</span
+                >
+              </div>
+              <div class="stop-details">
+                <span class="platform">Platform: {{ stop.platform }}</span>
+                <span class="delay" v-if="stop.delay"
+                  >Delay: {{ stop.delay }} min</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button @click="closeStopsDialog">Close</button>
+    </dialog>
 
     <dialog ref="favDialog" class="favDialog">
       <form @submit.prevent="confirmDialog">
@@ -51,19 +85,32 @@
 import { ref, onMounted } from "vue";
 import { useRoutePlayListStore } from "../stores/CreateList";
 import RouteSearch from "./RouteSearch.vue";
+import { defineAsyncComponent } from "vue";
 import { useFetchRoutes } from "../stores/fetchRoutes";
-
+console.log(RouteSearch.fromInput);
 const fetchRoutes = useFetchRoutes();
-
-console.log(RouteSearch.fromInput)
-
 const props = defineProps<{
   fromStationName: string;
   stationName: string;
   platForm: string;
   departure: string;
   arrival: string;
+  connectionId: string;
 }>();
+
+const stopsDialog = ref<HTMLDialogElement | null>(null);
+const showStopsDialog = () => {
+  if (stopsDialog.value) {
+    confirmDialog();
+    stopsDialog.value.showModal();
+  }
+};
+
+const closeStopsDialog = () => {
+  if (stopsDialog.value) {
+    stopsDialog.value.close();
+  }
+};
 
 const createList = useRoutePlayListStore();
 const selectedRoute = ref<string>("default");
@@ -83,27 +130,30 @@ const closeDialog = () => {
 };
 
 const confirmDialog = () => {
-  if (favDialog.value && selectedRoute.value !== "default") {
-    // Create a route object with the current route details
-    const route = {
-      fromStationName: props.fromStationName,
-      stationName: props.stationName,
-      platForm: props.platForm,
-      departure: props.departure,
-      arrival: props.arrival,
-    };
+  // Create a route object with the current route details
+  const route = {
+    fromStationName: props.fromStationName,
+    stationName: props.stationName,
+    platForm: props.platForm,
+    departure: props.departure,
+    arrival: props.arrival,
+  };
 
-    // Add the route to the selected list
-    createList.addRouteToList(selectedRoute.value, route);
+  // Add the route to the selected list
+  fetchRoutes.fetchIntermediateStops(
+    route.fromStationName,
+    route.stationName,
+    route.departure
+  );
 
-    // Close the dialog
-    favDialog.value.close(selectedRoute.value);
-
-    // Optional: Reset the selected route
-    selectedRoute.value = "default";
-  }
+  console.log("departure:" + route.departure);
 };
 onMounted(() => {
+  fetchRoutes.fetchIntermediateStops(
+    props.fromStationName,
+    props.stationName,
+    props.departure
+  );
   if (favDialog.value) {
     favDialog.value.addEventListener("close", () => {
       outputMessage.value =
@@ -129,17 +179,8 @@ const calculateDuration = (departure: string, arrival: string): string => {
   const dep = new Date(departure);
   const arr = new Date(arrival);
   const diff = (arr.getTime() - dep.getTime()) / 60000; // difference in minutes
-
-  const hours = Math.floor(diff / 60); // berechnet die Stunden
-  const minutes = diff % 60; // berechnet die verbleibenden Minuten
-
-  if (hours > 0) {
-    return `${hours}h ${minutes}min`;
-  } else {
-    return `${minutes}min`;
-  }
+  return `${diff} min`;
 };
-
 
 const formatTime = (dateTime: string): string => {
   const date = new Date(dateTime);
@@ -171,4 +212,42 @@ const onDragStart = (event: DragEvent) => {
 <style scoped>
 .route-list-item {
   cursor: move;
-}</style>
+}
+.large-dialog {
+  color: white;
+  width: 80%;
+  max-width: 600px;
+  height: 80%;
+  max-height: 800px;
+}
+
+.view-stop {
+  padding: 20px;
+}
+
+.stop-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stop-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.stop-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.stop-times,
+.stop-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.delay {
+  color: red;
+}
+</style>

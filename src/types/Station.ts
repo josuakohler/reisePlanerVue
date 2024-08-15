@@ -1,7 +1,6 @@
 export interface Station {
-  station: {
-    name: string;
-  };
+  name: string;
+
   platform: string;
   departure: string;
   arrival: string;
